@@ -25,6 +25,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'apps.category.apps.CategoryConfig',
     'apps.accounts.apps.AccountsConfig',
+    'apps.store.apps.StoreConfig',
+    'apps.carts.apps.CartsConfig',
 ]
 
 MIDDLEWARE = [
@@ -50,6 +52,7 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+                'apps.category.context_processors.menu_links'
             ],
         },
     },
@@ -57,7 +60,7 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'core.wsgi.application'
 
-AUTH_USER_MODEL = 'apps.accounts.Account'
+AUTH_USER_MODEL = 'accounts.Account'
 
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
 
